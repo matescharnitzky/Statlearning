@@ -164,7 +164,7 @@ gam.lo = gam(wage ~ s(year,df=4) + lo(age,span=0.7) + education, data = Wage)
 # plot
 plot.Gam(gam.lo, se=TRUE, col="green")
 
-# fit: gam with local regression and interction
+# fit: gam with local regression and interaction
 gam.lo.i=gam(wage ~ lo(year, age,span=0.5)+education,data=Wage)
 plot(gam.lo.i)
 
@@ -173,7 +173,7 @@ gam.lr=gam(I(wage>250)~year+s(age,df=5)+education,family=binomial,data=Wage)
 par(mfrow=c(1,3))
 plot(gam.lr,se=T,col="green")
 
-# frequency of response by categories: no high earners in less than high scnools
+# frequency of response by categories: no high earners in less than high schools
 table(education,I(wage>250))
 
 # fit logistic case without "1. < HS Grad" category
