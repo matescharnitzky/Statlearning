@@ -130,6 +130,7 @@ fit = loess(wage ~ age, span = .2, data = Wage)
 fit2 = loess(wage ~ age, span = .5, data = Wage)
 
 # plot
+par(mfrow=c(1,1))
 plot(age,wage,xlim=agelims,cex=.5,col="darkgrey")
 title("Local Regression")
 lines(age.grid,predict(fit,data.frame(age=age.grid)),col="red",lwd=2)
